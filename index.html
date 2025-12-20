@@ -19,6 +19,12 @@
       border-bottom: 1px solid #eee;
     }
 
+    /* ✅ LOGO STYLE */
+    .logo {
+      max-width: 160px;
+      margin-bottom: 15px;
+    }
+
     header h1 {
       margin: 0;
       font-size: 32px;
@@ -54,11 +60,11 @@
       background: #fff;
     }
 
-    /* ✅ IMAGE HEIGHT INCREASED FOR ALL CATEGORIES */
+    /* ✅ SAME HEIGHT FOR ALL PRODUCT IMAGES */
     .product img {
       width: 100%;
-      height: 320px;       /* increased height */
-      object-fit: cover;  /* keeps image clean */
+      height: 320px;
+      object-fit: cover;
       background: #f5f5f5;
     }
 
@@ -94,7 +100,9 @@
 
 <body>
 
+  <!-- ✅ HEADER WITH LOGO -->
   <header>
+    <img src="logo.jpeg" alt="شميم Logo" class="logo">
     <h1>شميم | Shamim</h1>
     <p>عطور • دهن عود • أقمشة • قطع مختارة</p>
   </header>
@@ -105,7 +113,7 @@
     <div class="products">
 
       <div class="product">
-        <img src="perfume2.jpeg" alt="عطر">
+        <img src="perfume2.jpg" alt="عطر">
         <p>اسم العطر</p>
         <div class="price">___ درهم</div>
       </div>
@@ -136,34 +144,3 @@
         <img src="fabric1.jpg.jpeg" alt="قماش">
         <p>نوع القماش</p>
         <div class="price">___ درهم</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SELECTED ITEMS -->
-  <div class="section">
-    <h2>🧺 قطع مختارة</h2>
-    <div class="products">
-
-      <div class="product">
-        <img src="" alt="قطعة">
-        <p>اسم القطعة</p>
-        <div class="price">___ درهم</div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="whatsapp">
-    <a href="https://wa.me/971555504407" target="_blank">
-      اطلب الآن عبر واتساب
-    </a>
-  </div>
-
-  <footer>
-    © شميم – جميع الحقوق محفوظة
-  </footer>
-
-</body>
-</html>
