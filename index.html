@@ -9,7 +9,7 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #ffffff;
+      background: #f2f7fb; /* ✅ light bluish background */
       color: #222;
     }
 
@@ -17,17 +17,18 @@
       text-align: center;
       padding: 20px 0 30px;
       border-bottom: 1px solid #eee;
+      background: #ffffff;
     }
 
-    /* ✅ BANNER LOGO – FULL WIDTH OF PAGE */
+    /* BANNER LOGO – FULL WIDTH OF PAGE */
     .logo {
       width: 100%;
-      max-width: 900px;     /* aligns with content width */
+      max-width: 900px;
       height: auto;
       display: block;
       margin: 0 auto 15px;
       object-fit: contain;
-      border-radius: 0;     /* ensure NOT circular */
+      border-radius: 0;
     }
 
     header h1 {
@@ -43,7 +44,8 @@
     .section {
       padding: 30px 15px;
       max-width: 900px;
-      margin: auto;
+      margin: 30px auto;
+      background: #ffffff; /* keeps content clean on blue bg */
     }
 
     .section h2 {
@@ -62,6 +64,7 @@
       border: 1px solid #eee;
       padding: 10px;
       text-align: center;
+      background: #ffffff;
     }
 
     .product img {
@@ -79,7 +82,8 @@
     .whatsapp {
       text-align: center;
       padding: 25px;
-      background: #f9f9f9;
+      background: #ffffff;
+      margin-top: 30px;
     }
 
     .whatsapp a {
@@ -97,6 +101,8 @@
       padding: 15px;
       font-size: 14px;
       color: #777;
+      background: #ffffff;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -104,9 +110,7 @@
 <body>
 
   <header>
-    <!-- ✅ FULL-WIDTH BANNER LOGO -->
     <img src="logo01.jpg" alt="shameem banner" class="logo">
-
     <h1>shameem</h1>
     <p>عطور • دهن عود • أقمشة • قطع مختارة</p>
   </header>
@@ -136,4 +140,34 @@
   <div class="section">
     <h2>الأقمشة</h2>
     <div class="products">
-      <div
+      <div class="product">
+        <img src="fabric1.jpg.jpeg" alt="قماش">
+        <p>نوع القماش</p>
+        <div class="price">___ درهم</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>قطع مختارة</h2>
+    <div class="products">
+      <div class="product">
+        <img src="" alt="قطعة">
+        <p>اسم القطعة</p>
+        <div class="price">___ درهم</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="whatsapp">
+    <a href="https://wa.me/971555504407" target="_blank">
+      اطلب الآن عبر واتساب
+    </a>
+  </div>
+
+  <footer>
+    © shameem – جميع الحقوق محفوظة
+  </footer>
+
+</body>
+</html>
