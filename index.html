@@ -9,7 +9,7 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #e3edf6; /* ✅ slightly darker blue */
+      background: #e3edf6;
       color: #222;
       direction: rtl;
       text-align: right;
@@ -22,7 +22,7 @@
       background: #e3edf6;
     }
 
-    /* BANNER LOGO */
+    /* Banner logo */
     .logo {
       width: 100%;
       max-width: 900px;
@@ -30,23 +30,26 @@
       display: block;
       margin: 0 auto 15px;
       object-fit: contain;
+      border-radius: 0;
     }
 
     header h1 {
       margin: 0;
       font-size: 32px;
+      text-align: center;
     }
 
     header p {
       margin: 8px 0 0;
       color: #555;
+      text-align: center;
     }
 
     .section {
       padding: 30px 15px;
       max-width: 900px;
       margin: auto;
-      background: #e3edf6; /* ✅ same blue everywhere */
+      background: #e3edf6;
     }
 
     .section h2 {
@@ -69,7 +72,7 @@
       background: #e3edf6;
     }
 
-    /* images stay untouched */
+    /* Images stay the same */
     .product img {
       width: 100%;
       height: 320px;
@@ -81,6 +84,13 @@
     .price {
       margin-top: 8px;
       font-weight: bold;
+    }
+
+    /* Make the whole card clickable when it contains a link */
+    .product a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
     .whatsapp {
@@ -117,6 +127,7 @@
     <p>عطور • دهن عود • أقمشة • قطع مختارة</p>
   </header>
 
+  <!-- Perfumes -->
   <div class="section">
     <h2>العطور</h2>
     <div class="products">
@@ -128,6 +139,7 @@
     </div>
   </div>
 
+  <!-- Oud -->
   <div class="section">
     <h2>دهن العود</h2>
     <div class="products">
@@ -139,17 +151,31 @@
     </div>
   </div>
 
+  <!-- Fabrics (UPDATED: now shows 2 images linking to pages) -->
   <div class="section">
     <h2>الأقمشة</h2>
     <div class="products">
+
       <div class="product">
-        <img src="fabric1.jpg.jpeg" alt="قماش">
-        <p>نوع القماش</p>
-        <div class="price">___ درهم</div>
+        <a href="fabric3.html">
+          <img src="fabric3.jpeg" alt="قماش 1">
+          <p>قماش فاخر</p>
+          <div class="price">___ درهم</div>
+        </a>
       </div>
+
+      <div class="product">
+        <a href="fabric6.html">
+          <img src="fabric6.jpeg" alt="قماش 2">
+          <p>قماش مميز</p>
+          <div class="price">___ درهم</div>
+        </a>
+      </div>
+
     </div>
   </div>
 
+  <!-- Selected items -->
   <div class="section">
     <h2>قطع مختارة</h2>
     <div class="products">
