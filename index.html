@@ -15,18 +15,19 @@
 
     header {
       text-align: center;
-      padding: 30px 15px;
+      padding: 20px 0 30px;
       border-bottom: 1px solid #eee;
     }
 
-    /* RECTANGLE BANNER – width updated to 375px */
+    /* ✅ BANNER LOGO – FULL WIDTH OF PAGE */
     .logo {
-      width: 375px;        /* ✅ changed from 390px */
-      height: 240px;
+      width: 100%;
+      max-width: 900px;     /* aligns with content width */
+      height: auto;
+      display: block;
+      margin: 0 auto 15px;
       object-fit: contain;
-      border-radius: 0;
-      margin-bottom: 15px;
-      max-width: 100%;
+      border-radius: 0;     /* ensure NOT circular */
     }
 
     header h1 {
@@ -103,7 +104,9 @@
 <body>
 
   <header>
-    <img src="logo1.jpeg" alt="shameem logo" class="logo">
+    <!-- ✅ FULL-WIDTH BANNER LOGO -->
+    <img src="logo01.jpeg" alt="shameem banner" class="logo">
+
     <h1>shameem</h1>
     <p>عطور • دهن عود • أقمشة • قطع مختارة</p>
   </header>
@@ -133,34 +136,4 @@
   <div class="section">
     <h2>الأقمشة</h2>
     <div class="products">
-      <div class="product">
-        <img src="fabric1.jpg.jpeg" alt="قماش">
-        <p>نوع القماش</p>
-        <div class="price">___ درهم</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>قطع مختارة</h2>
-    <div class="products">
-      <div class="product">
-        <img src="" alt="قطعة">
-        <p>اسم القطعة</p>
-        <div class="price">___ درهم</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="whatsapp">
-    <a href="https://wa.me/971555504407" target="_blank">
-      اطلب الآن عبر واتساب
-    </a>
-  </div>
-
-  <footer>
-    © shameem – جميع الحقوق محفوظة
-  </footer>
-
-</body>
-</html>
+      <div
