@@ -22,15 +22,12 @@
       background: #e3edf6;
     }
 
-    /* Banner logo */
     .logo {
       width: 100%;
       max-width: 900px;
-      height: auto;
       display: block;
       margin: 0 auto 15px;
       object-fit: contain;
-      border-radius: 0;
     }
 
     header h1 {
@@ -55,9 +52,9 @@
     .section h2 {
       border-bottom: 1px solid #c3d3e2;
       padding-bottom: 8px;
-      text-align: right;
     }
 
+    /* DEFAULT GRID (for other sections) */
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -65,14 +62,26 @@
       margin-top: 20px;
     }
 
+    /* 🔽 FABRICS GRID – FORCE 2 ITEMS ON MOBILE */
+    .products.fabrics {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
     .product {
       border: 1px solid #cfdbe8;
       padding: 10px;
-      text-align: right;
       background: #e3edf6;
+      text-align: right;
     }
 
-    /* Images stay the same */
+    .product a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    /* DEFAULT IMAGE SIZE */
     .product img {
       width: 100%;
       height: 320px;
@@ -81,16 +90,14 @@
       display: block;
     }
 
+    /* 🔽 SMALLER IMAGE HEIGHT FOR FABRICS */
+    .products.fabrics .product img {
+      height: 200px;
+    }
+
     .price {
       margin-top: 8px;
       font-weight: bold;
-    }
-
-    /* Make the whole card clickable when it contains a link */
-    .product a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
     }
 
     .whatsapp {
@@ -127,7 +134,7 @@
     <p>عطور • دهن عود • أقمشة • قطع مختارة</p>
   </header>
 
-  <!-- Perfumes -->
+  <!-- PERFUMES -->
   <div class="section">
     <h2>العطور</h2>
     <div class="products">
@@ -139,7 +146,7 @@
     </div>
   </div>
 
-  <!-- Oud -->
+  <!-- OUD -->
   <div class="section">
     <h2>دهن العود</h2>
     <div class="products">
@@ -151,16 +158,15 @@
     </div>
   </div>
 
-  <!-- Fabrics (UPDATED: now shows 2 images linking to pages) -->
+  <!-- FABRICS (2 IMAGES SIDE BY SIDE ON MOBILE) -->
   <div class="section">
     <h2>الأقمشة</h2>
-    <div class="products">
+    <div class="products fabrics">
 
       <div class="product">
         <a href="fabric3.html">
           <img src="fabric3.jpeg" alt="قماش 1">
           <p>قماش فاخر</p>
-          <div class="price">___ درهم</div>
         </a>
       </div>
 
@@ -168,14 +174,13 @@
         <a href="fabric6.html">
           <img src="fabric6.jpeg" alt="قماش 2">
           <p>قماش مميز</p>
-          <div class="price">___ درهم</div>
         </a>
       </div>
 
     </div>
   </div>
 
-  <!-- Selected items -->
+  <!-- SELECTED ITEMS -->
   <div class="section">
     <h2>قطع مختارة</h2>
     <div class="products">
