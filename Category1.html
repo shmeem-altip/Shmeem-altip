@@ -60,10 +60,11 @@
       text-align: center;
     }
 
+    /* ✅ FIX: image fits fully inside box */
     .fabric-box img {
       width: 100%;
       height: 200px;
-      object-fit: cover;
+      object-fit: contain;   /* 👈 changed from cover */
       background: #f5f5f5;
       display: block;
     }
@@ -96,7 +97,7 @@
       <!-- Fabric 1A -->
       <div class="fabric-box">
         <img src="fabric1a.jpeg" alt="حرير صفوة - 1">
-        <a 
+        <a
           class="whatsapp-btn"
           href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%201)"
           target="_blank">
@@ -107,7 +108,7 @@
       <!-- Fabric 1B -->
       <div class="fabric-box">
         <img src="fabric1b.jpeg" alt="حرير صفوة - 2">
-        <a 
+        <a
           class="whatsapp-btn"
           href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%202)"
           target="_blank">
@@ -118,7 +119,7 @@
       <!-- Fabric 1C -->
       <div class="fabric-box">
         <img src="fabric1c.jpeg" alt="حرير صفوة - 3">
-        <a 
+        <a
           class="whatsapp-btn"
           href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%203)"
           target="_blank">
