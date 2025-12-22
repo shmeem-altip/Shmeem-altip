@@ -55,10 +55,18 @@
       padding: 30px 15px;
     }
 
+    /* GRID */
     .fabric-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, 1fr); /* mobile */
       gap: 16px;
+    }
+
+    /* Desktop */
+    @media (min-width: 900px) {
+      .fabric-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
     .fabric-box {
@@ -117,6 +125,7 @@
       font-size: 32px;
       color: #fff;
       cursor: pointer;
+      user-select: none;
     }
   </style>
 </head>
@@ -137,46 +146,45 @@
       <img src="fabric2a.jpeg" onclick="openImage(this.src)">
       <div class="item-name">حرير جاكارد + شيفون مزراي - 1</div>
       <a class="whatsapp-btn"
-         href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%201)"
-         target="_blank">
-        اضغط للاستفسار
-      </a>
+         href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%201)"
+         target="_blank">اضغط للاستفسار</a>
     </div>
 
     <div class="fabric-box">
       <img src="fabric2b.jpeg" onclick="openImage(this.src)">
       <div class="item-name">حرير جاكارد + شيفون مزراي - 2</div>
       <a class="whatsapp-btn"
-         href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%202)"
-         target="_blank">
-        اضغط للاستفسار
-      </a>
+         href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%202)"
+         target="_blank">اضغط للاستفسار</a>
     </div>
 
     <div class="fabric-box">
       <img src="fabric2c.jpeg" onclick="openImage(this.src)">
       <div class="item-name">حرير جاكارد + شيفون مزراي - 3</div>
       <a class="whatsapp-btn"
-         href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%203)"
-         target="_blank">
-        اضغط للاستفسار
-      </a>
+         href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%203)"
+         target="_blank">اضغط للاستفسار</a>
+    </div>
+
+    <div class="fabric-box">
+      <img src="fabric2d.jpeg" onclick="openImage(this.src)">
+      <div class="item-name">حرير جاكارد + شيفون مزراي - 4</div>
+      <a class="whatsapp-btn"
+         href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%204)"
+         target="_blank">اضغط للاستفسار</a>
     </div>
 
     <div class="fabric-box">
       <img src="fabric2e.jpeg" onclick="openImage(this.src)">
-      <div class="item-name">حرير جاكارد + شيفون مزراي - 4</div>
+      <div class="item-name">حرير جاكارد + شيفون مزراي - 5</div>
       <a class="whatsapp-btn"
-         href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%204)"
-         target="_blank">
-        اضغط للاستفسار
-      </a>
+         href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%205)"
+         target="_blank">اضغط للاستفسار</a>
     </div>
 
   </div>
 </div>
 
-<!-- FULLSCREEN IMAGE VIEWER -->
 <div class="overlay" id="overlay" onclick="closeImage()">
   <span class="close-btn" onclick="closeImage()">×</span>
   <img id="overlay-img">
@@ -187,7 +195,6 @@
     document.getElementById("overlay-img").src = src;
     document.getElementById("overlay").style.display = "flex";
   }
-
   function closeImage() {
     document.getElementById("overlay").style.display = "none";
   }
