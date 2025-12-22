@@ -17,7 +17,7 @@
 
     header {
       text-align: center;
-      padding: 20px 0 25px;
+      padding: 20px 0 30px;
       border-bottom: 1px solid #cfdbe8;
       background: #e3edf6;
     }
@@ -35,25 +35,26 @@
       font-size: 28px;
     }
 
-    /* ✅ Category name: bold & slightly larger */
-    .category-title {
-      margin-top: 8px;
-      font-size: 20px;
+    /* ✅ "الأقمشة" line under brand name */
+    header .section-title {
+      margin: 10px 0 6px;
+      font-size: 18px;
       font-weight: bold;
       color: #222;
     }
 
-    /* ✅ Type name only (no price) */
-    .type-name {
-      margin-top: 4px;
-      font-size: 15px;
-      color: #444;
+    /* ✅ Category name (حرير صفوة) */
+    header .category-title {
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+      color: #222;
     }
 
     .section {
       max-width: 900px;
       margin: auto;
-      padding: 25px 15px;
+      padding: 30px 15px;
     }
 
     .fabric-grid {
@@ -64,16 +65,42 @@
 
     .fabric-box {
       border: 1px solid #cfdbe8;
+      padding: 10px;
       background: #e3edf6;
-      overflow: hidden; /* ensures clean edges */
+      text-align: center;
     }
 
-    /* ✅ Images stretch to fill box (no white gaps) */
+    /* ✅ remove white gaps by matching background */
     .fabric-box img {
       width: 100%;
-      height: 220px;
-      object-fit: cover; /* fills box cleanly */
+      height: 200px;
+      object-fit: contain;
+      background: #e3edf6; /* changed from #f5f5f5 */
       display: block;
+    }
+
+    .item-name {
+      margin: 10px 0 4px;
+      font-weight: bold;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .item-price {
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: normal;
+      color: #444;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 8px 14px;
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 20px;
     }
   </style>
 </head>
@@ -84,23 +111,47 @@
     <img src="logo01.jpg" alt="shameem banner" class="logo">
     <h1>shameem</h1>
 
+    <div class="section-title">الأقمشة</div>
     <div class="category-title">حرير صفوة</div>
-    <div class="type-name">حرير صفوة</div>
   </header>
 
   <div class="section">
     <div class="fabric-grid">
 
       <div class="fabric-box">
-        <img src="fabric1a.jpeg" alt="حرير صفوة 1">
+        <img src="fabric1a.jpeg" alt="حرير صفوة - 1">
+        <div class="item-name">حرير صفوة - 1</div>
+        <div class="item-price">450 درهم</div>
+        <a
+          class="whatsapp-btn"
+          href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%201)%20—%20السعر%20450%20درهم"
+          target="_blank">
+          اضغط للاستفسار
+        </a>
       </div>
 
       <div class="fabric-box">
-        <img src="fabric1b.jpeg" alt="حرير صفوة 2">
+        <img src="fabric1b.jpeg" alt="حرير صفوة - 2">
+        <div class="item-name">حرير صفوة - 2</div>
+        <div class="item-price">450 درهم</div>
+        <a
+          class="whatsapp-btn"
+          href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%202)%20—%20السعر%20450%20درهم"
+          target="_blank">
+          اضغط للاستفسار
+        </a>
       </div>
 
       <div class="fabric-box">
-        <img src="fabric1c.jpeg" alt="حرير صفوة 3">
+        <img src="fabric1c.jpeg" alt="حرير صفوة - 3">
+        <div class="item-name">حرير صفوة - 3</div>
+        <div class="item-price">450 درهم</div>
+        <a
+          class="whatsapp-btn"
+          href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%203)%20—%20السعر%20450%20درهم"
+          target="_blank">
+          اضغط للاستفسار
+        </a>
       </div>
 
     </div>
