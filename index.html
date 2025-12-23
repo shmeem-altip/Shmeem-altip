@@ -60,8 +60,8 @@
       margin-top: 20px;
     }
 
-    /* Fabrics: 2 items per row on mobile */
-    .products.fabrics {
+    /* 2 cards per row (like fabrics) */
+    .products.two-col {
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
@@ -128,7 +128,7 @@
 <header>
   <img src="logo01.jpg" alt="shameem banner" class="logo">
   <h1>shameem</h1>
-  <p>عطور • دهن عود • أقمشة • قطع مختارة</p>
+  <p>عطور • عود • دهن عود • أقمشة • قطع مختارة</p>
 </header>
 
 <!-- PERFUMES -->
@@ -142,7 +142,31 @@
   </div>
 </div>
 
-<!-- OUD -->
+<!-- ✅ NEW SECTION: OUD (above دهن العود) -->
+<div class="section">
+  <h2>العود...</h2>
+  <div class="products two-col">
+
+    <div class="product">
+      <a href="Category3.html">
+        <img src="oudsla.jpeg" alt="عود سلا">
+        <p>عود سلا</p>
+        <div class="price">120 درهم</div>
+      </a>
+    </div>
+
+    <div class="product">
+      <a href="Category4.html">
+        <img src="ouddqa.jpeg" alt="عود دقة">
+        <p>عود دقة</p>
+        <div class="price">75 درهم</div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- OUD OIL -->
 <div class="section">
   <h2>دهن العود</h2>
   <div class="products">
@@ -156,7 +180,7 @@
 <!-- FABRICS -->
 <div class="section">
   <h2>الأقمشة</h2>
-  <div class="products fabrics">
+  <div class="products two-col">
 
     <div class="product">
       <a href="Category1.html">
