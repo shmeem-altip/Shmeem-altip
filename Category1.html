@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>حرير صفوة - shameem</title>
+  <title>حرير صفوة + اورجانزا مطرز - shameem</title>
 
   <style>
     body {
@@ -39,12 +39,14 @@
       margin: 10px 0 6px;
       font-size: 18px;
       font-weight: bold;
+      color: #222;
     }
 
     .category-title {
       margin: 0;
       font-size: 22px;
       font-weight: bold;
+      color: #222;
     }
 
     .section {
@@ -72,17 +74,20 @@
       object-fit: contain;
       background: #e3edf6;
       cursor: pointer;
+      display: block;
     }
 
     .item-name {
       margin: 10px 0 4px;
       font-weight: bold;
       font-size: 15px;
+      color: #222;
     }
 
     .item-price {
       margin: 0 0 10px;
       font-size: 13px;
+      font-weight: normal;
       color: #444;
     }
 
@@ -96,32 +101,31 @@
       border-radius: 20px;
     }
 
-    /* 🔲 FULLSCREEN OVERLAY */
+    /* FULLSCREEN OVERLAY */
     .overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: rgba(0,0,0,0.85);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 9999;
+      touch-action: pan-y; /* allow vertical scroll outside overlay; swipe handled in JS */
     }
 
     .overlay img {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 92%;
+      max-height: 92%;
     }
 
     .close-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 32px;
+      top: 18px;
+      right: 18px;
+      font-size: 34px;
       color: #fff;
       cursor: pointer;
+      user-select: none;
     }
   </style>
 </head>
@@ -139,58 +143,99 @@
     <div class="fabric-grid">
 
       <div class="fabric-box">
-        <img src="fabric1a.jpeg" onclick="openImage(this.src)">
-        <div class="item-name">حرير صفوة - 1</div>
+        <img src="fabric1a.jpeg" alt="1" onclick="openViewer(0)">
+        <div class="item-name">حرير صفوة + اورجانزا مطرز - 1</div>
         <div class="item-price">450 درهم</div>
         <a class="whatsapp-btn"
-           href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%201)"
-           target="_blank">
-          اضغط للاستفسار
-        </a>
+           href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20+%20اورجانزا%20مطرز%20(الصنف%201)"
+           target="_blank">اضغط للاستفسار</a>
       </div>
 
       <div class="fabric-box">
-        <img src="fabric1b.jpeg" onclick="openImage(this.src)">
-        <div class="item-name">حرير صفوة - 2</div>
+        <img src="fabric1b.jpeg" alt="2" onclick="openViewer(1)">
+        <div class="item-name">حرير صفوة + اورجانزا مطرز - 2</div>
         <div class="item-price">450 درهم</div>
         <a class="whatsapp-btn"
-           href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%202)"
-           target="_blank">
-          اضغط للاستفسار
-        </a>
+           href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20+%20اورجانزا%20مطرز%20(الصنف%202)"
+           target="_blank">اضغط للاستفسار</a>
       </div>
 
       <div class="fabric-box">
-        <img src="fabric1c.jpeg" onclick="openImage(this.src)">
-        <div class="item-name">حرير صفوة - 3</div>
+        <img src="fabric1c.jpeg" alt="3" onclick="openViewer(2)">
+        <div class="item-name">حرير صفوة + اورجانزا مطرز - 3</div>
         <div class="item-price">450 درهم</div>
         <a class="whatsapp-btn"
-           href="https://wa.me/971555504407?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20(الصنف%203)"
-           target="_blank">
-          اضغط للاستفسار
-        </a>
+           href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20صفوة%20+%20اورجانزا%20مطرز%20(الصنف%203)"
+           target="_blank">اضغط للاستفسار</a>
       </div>
 
     </div>
   </div>
 
-  <!-- FULLSCREEN IMAGE VIEWER -->
-  <div class="overlay" id="overlay" onclick="closeImage()">
-    <span class="close-btn" onclick="closeImage()">×</span>
-    <img id="overlay-img">
+  <!-- FULLSCREEN VIEWER -->
+  <div class="overlay" id="overlay" onclick="closeViewer()">
+    <span class="close-btn" onclick="closeViewer()">×</span>
+    <img id="viewer-img" alt="fullscreen" onclick="event.stopPropagation()">
   </div>
 
   <script>
-    function openImage(src) {
-      document.getElementById("overlay-img").src = src;
-      document.getElementById("overlay").style.display = "flex";
+    // ✅ EDIT HERE if you add/remove images
+    const images = ["fabric1a.jpeg", "fabric1b.jpeg", "fabric1c.jpeg"];
+    let currentIndex = 0;
+
+    const overlay = document.getElementById("overlay");
+    const viewerImg = document.getElementById("viewer-img");
+
+    function openViewer(index) {
+      currentIndex = index;
+      viewerImg.src = images[currentIndex];
+      overlay.style.display = "flex";
     }
 
-    function closeImage() {
-      document.getElementById("overlay").style.display = "none";
+    function closeViewer() {
+      overlay.style.display = "none";
     }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      viewerImg.src = images[currentIndex];
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      viewerImg.src = images[currentIndex];
+    }
+
+    // Swipe handling
+    let startX = 0;
+    let endX = 0;
+
+    overlay.addEventListener("touchstart", (e) => {
+      if (overlay.style.display !== "flex") return;
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    overlay.addEventListener("touchend", (e) => {
+      if (overlay.style.display !== "flex") return;
+      endX = e.changedTouches[0].clientX;
+      const diff = endX - startX;
+
+      // threshold to avoid accidental swipes
+      if (Math.abs(diff) < 50) return;
+
+      // Swipe left => next, Swipe right => prev
+      if (diff < 0) showNext();
+      else showPrev();
+    }, { passive: true });
+
+    // Keyboard arrows on desktop
+    document.addEventListener("keydown", (e) => {
+      if (overlay.style.display !== "flex") return;
+      if (e.key === "ArrowRight") showPrev(); // RTL feel
+      if (e.key === "ArrowLeft") showNext();
+      if (e.key === "Escape") closeViewer();
+    });
   </script>
 
 </body>
 </html>
-
