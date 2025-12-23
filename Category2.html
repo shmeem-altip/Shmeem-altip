@@ -55,14 +55,12 @@
       padding: 30px 15px;
     }
 
-    /* GRID */
     .fabric-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* mobile */
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
 
-    /* Desktop */
     @media (min-width: 900px) {
       .fabric-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -102,7 +100,6 @@
       border-radius: 20px;
     }
 
-    /* FULLSCREEN OVERLAY */
     .overlay {
       position: fixed;
       inset: 0;
@@ -111,18 +108,19 @@
       align-items: center;
       justify-content: center;
       z-index: 9999;
+      touch-action: pan-y;
     }
 
     .overlay img {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 92%;
+      max-height: 92%;
     }
 
     .close-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 32px;
+      top: 18px;
+      right: 18px;
+      font-size: 34px;
       color: #fff;
       cursor: pointer;
       user-select: none;
@@ -143,7 +141,7 @@
   <div class="fabric-grid">
 
     <div class="fabric-box">
-      <img src="fabric2a.jpeg" onclick="openImage(this.src)">
+      <img src="fabric2a.jpeg" alt="1" onclick="openViewer(0)">
       <div class="item-name">حرير جاكارد + شيفون مزراي - 1</div>
       <a class="whatsapp-btn"
          href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%201)"
@@ -151,7 +149,7 @@
     </div>
 
     <div class="fabric-box">
-      <img src="fabric2b.jpeg" onclick="openImage(this.src)">
+      <img src="fabric2b.jpeg" alt="2" onclick="openViewer(1)">
       <div class="item-name">حرير جاكارد + شيفون مزراي - 2</div>
       <a class="whatsapp-btn"
          href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%202)"
@@ -159,7 +157,7 @@
     </div>
 
     <div class="fabric-box">
-      <img src="fabric2c.jpeg" onclick="openImage(this.src)">
+      <img src="fabric2c.jpeg" alt="3" onclick="openViewer(2)">
       <div class="item-name">حرير جاكارد + شيفون مزراي - 3</div>
       <a class="whatsapp-btn"
          href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%203)"
@@ -167,7 +165,7 @@
     </div>
 
     <div class="fabric-box">
-      <img src="fabric2d.jpeg" onclick="openImage(this.src)">
+      <img src="fabric2d.jpeg" alt="4" onclick="openViewer(3)">
       <div class="item-name">حرير جاكارد + شيفون مزراي - 4</div>
       <a class="whatsapp-btn"
          href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%204)"
@@ -175,7 +173,7 @@
     </div>
 
     <div class="fabric-box">
-      <img src="fabric2e.jpeg" onclick="openImage(this.src)">
+      <img src="fabric2e.jpeg" alt="5" onclick="openViewer(4)">
       <div class="item-name">حرير جاكارد + شيفون مزراي - 5</div>
       <a class="whatsapp-btn"
          href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20حرير%20جاكارد%20+%20شيفون%20مزراي%20(الصنف%205)"
@@ -185,19 +183,62 @@
   </div>
 </div>
 
-<div class="overlay" id="overlay" onclick="closeImage()">
-  <span class="close-btn" onclick="closeImage()">×</span>
-  <img id="overlay-img">
+<div class="overlay" id="overlay" onclick="closeViewer()">
+  <span class="close-btn" onclick="closeViewer()">×</span>
+  <img id="viewer-img" alt="fullscreen" onclick="event.stopPropagation()">
 </div>
 
 <script>
-  function openImage(src) {
-    document.getElementById("overlay-img").src = src;
-    document.getElementById("overlay").style.display = "flex";
+  const images = ["fabric2a.jpeg", "fabric2b.jpeg", "fabric2c.jpeg", "fabric2d.jpeg", "fabric2e.jpeg"];
+  let currentIndex = 0;
+
+  const overlay = document.getElementById("overlay");
+  const viewerImg = document.getElementById("viewer-img");
+
+  function openViewer(index) {
+    currentIndex = index;
+    viewerImg.src = images[currentIndex];
+    overlay.style.display = "flex";
   }
-  function closeImage() {
-    document.getElementById("overlay").style.display = "none";
+
+  function closeViewer() {
+    overlay.style.display = "none";
   }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    viewerImg.src = images[currentIndex];
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    viewerImg.src = images[currentIndex];
+  }
+
+  let startX = 0;
+  let endX = 0;
+
+  overlay.addEventListener("touchstart", (e) => {
+    if (overlay.style.display !== "flex") return;
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  overlay.addEventListener("touchend", (e) => {
+    if (overlay.style.display !== "flex") return;
+    endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+    if (Math.abs(diff) < 50) return;
+
+    if (diff < 0) showNext();
+    else showPrev();
+  }, { passive: true });
+
+  document.addEventListener("keydown", (e) => {
+    if (overlay.style.display !== "flex") return;
+    if (e.key === "ArrowRight") showPrev(); // RTL feel
+    if (e.key === "ArrowLeft") showNext();
+    if (e.key === "Escape") closeViewer();
+  });
 </script>
 
 </body>
