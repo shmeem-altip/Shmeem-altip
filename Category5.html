@@ -55,7 +55,6 @@
       padding: 30px 15px;
     }
 
-    /* ✅ grid like Category1/2 */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -95,7 +94,6 @@
       border-radius: 20px;
     }
 
-    /* FULLSCREEN OVERLAY + SWIPE */
     .overlay {
       position: fixed;
       inset: 0;
@@ -153,7 +151,7 @@
     </div>
 
     <div class="box">
-      <img src="clasic.jpeg" alt="عطر كالاكاسي (نقوة)" onclick="openViewer(2)">
+      <img src="clasic2.jpeg" alt="عطر كالاكاسي (نقوة)" onclick="openViewer(2)">
       <div class="item-name">عطر كالاكاسي (نقوة)</div>
       <a class="whatsapp-btn"
          href="https://wa.me/971555504407?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20عطر%20كالاكاسي%20(نقوة)%20—%20السعر%20170%20درهم"
@@ -169,8 +167,7 @@
 </div>
 
 <script>
-  // ✅ Swipe-ready image list (3 items)
-  const images = ["oudmusk.jpeg", "wanasa.jpeg", "clasic.jpeg"];
+  const images = ["oudmusk.jpeg", "wanasa.jpeg", "clasic2.jpeg"];
   let currentIndex = 0;
 
   const overlay = document.getElementById("overlay");
@@ -196,7 +193,6 @@
     viewerImg.src = images[currentIndex];
   }
 
-  // Swipe support
   let startX = 0;
   let endX = 0;
 
@@ -209,14 +205,11 @@
     if (overlay.style.display !== "flex") return;
     endX = e.changedTouches[0].clientX;
     const diff = endX - startX;
-
     if (Math.abs(diff) < 50) return;
-
     if (diff < 0) showNext();
     else showPrev();
   }, { passive: true });
 
-  // Keyboard arrows (desktop)
   document.addEventListener("keydown", (e) => {
     if (overlay.style.display !== "flex") return;
     if (e.key === "ArrowRight") showPrev();
