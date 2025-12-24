@@ -60,6 +60,7 @@
       margin-top: 20px;
     }
 
+    /* 2 cards per row */
     .products.two-col {
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
@@ -77,10 +78,10 @@
       display: block;
     }
 
-    /* ✅ IMAGE HEIGHT INCREASED ~35% */
+    /* ✅ Taller images (+35%) */
     .product img {
       width: 100%;
-      height: 350px;   /* was 260px */
+      height: 350px;
       object-fit: cover;
       background: #e3edf6;
       display: block;
@@ -131,18 +132,55 @@
   <p>عطور • عود • دهن عود • أقمشة • قطع مختارة</p>
 </header>
 
-<!-- PERFUMES -->
+<!-- PERFUMES (5 categories) -->
 <div class="section">
   <h2>العطور</h2>
   <div class="products">
+
     <div class="product">
-      <img src="perfume2.jpeg" alt="عطر">
-      <p>اسم العطر</p>
+      <a href="./Category5.html">
+        <img src="oudmusk.jpeg" alt="مسك عود (غزالي)">
+        <p>مسك عود (غزالي)</p>
+        <div class="price">170 درهم</div>
+      </a>
     </div>
+
+    <div class="product">
+      <a href="./Category6.html">
+        <img src="itali.jpeg" alt="عطر ايطاليانو (غزالي)">
+        <p>عطر ايطاليانو (غزالي)</p>
+        <div class="price">250 درهم</div>
+      </a>
+    </div>
+
+    <div class="product">
+      <a href="./Category7.html">
+        <img src="wanasa.jpeg" alt="وناسة (غزالي)">
+        <p>وناسة (غزالي)</p>
+        <div class="price">170 درهم</div>
+      </a>
+    </div>
+
+    <div class="product">
+      <a href="./Category8.html">
+        <img src="pink.jpeg" alt="بنك عنبر (غزالي)">
+        <p>بنك عنبر (غزالي)</p>
+        <div class="price">110 درهم</div>
+      </a>
+    </div>
+
+    <div class="product">
+      <a href="./Category9.html">
+        <img src="clasic.jpeg" alt="عطر كالاكاسي (نقوة)">
+        <p>عطر كالاكاسي (نقوة)</p>
+        <div class="price">170 درهم</div>
+      </a>
+    </div>
+
   </div>
 </div>
 
-<!-- ✅ OUD SECTION (RENAMED, NO DOTS) -->
+<!-- OUD -->
 <div class="section">
   <h2>العود</h2>
   <div class="products two-col">
