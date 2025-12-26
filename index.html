@@ -228,6 +228,10 @@
       cursor:pointer;
     }
 
+    /* ✅ used for “no price card” */
+    .no-price .price{display:none;}
+    .no-price .name{margin-bottom:0;}
+
     .to-top{
       position:fixed;
       left:16px;
@@ -301,14 +305,14 @@
     </div>
 
     <div class="row">
-      <div class="card">
+      <div class="card no-price">
         <a href="./Category5.html">
           <div class="img-wrap"><img src="OudGaz.png" alt="غزالي"></div>
           <div class="name">غزالي</div>
           <button class="view-btn" type="button">عرض</button>
         </a>
       </div>
-      <div class="card">
+      <div class="card no-price">
         <a href="./Category6.html">
           <div class="img-wrap"><img src="NaqwaOud.png" alt="نقوة"></div>
           <div class="name">نقوة</div>
@@ -378,7 +382,7 @@
     </div>
 
     <div class="row">
-      <div class="card">
+      <div class="card no-price">
         <a href="./Category9.html">
           <div class="img-wrap"><img src="dhnoud1.jpeg" alt="دهن العود - أجمل"></div>
           <div class="name">دهن العود - أجمل</div>
@@ -404,7 +408,6 @@
     </div>
 
     <div class="row">
-      <!-- existing -->
       <div class="card">
         <a href="./Category1.html">
           <div class="img-wrap"><img src="fabric3.jpeg" alt="حرير صفوة + اورجانزا مطرز"></div>
@@ -423,7 +426,6 @@
         </a>
       </div>
 
-      <!-- NEW 1 -->
       <div class="card">
         <a href="./Category8.html">
           <div class="img-wrap"><img src="organza4.jpeg" alt="اورجانزا مشغول خرز وتطريز"></div>
@@ -433,7 +435,6 @@
         </a>
       </div>
 
-      <!-- NEW 2 -->
       <div class="card">
         <a href="./Category10.html">
           <div class="img-wrap"><img src="fab4.jpeg" alt="حرير صفوه مخروز(درجة أولى)"></div>
@@ -443,7 +444,6 @@
         </a>
       </div>
 
-      <!-- NEW 3 -->
       <div class="card">
         <a href="./Category11.html">
           <div class="img-wrap"><img src="scarf1.jpeg" alt="شيلة قطن شغل دانتيل(عماد)"></div>
@@ -452,7 +452,33 @@
           <button class="view-btn" type="button">عرض</button>
         </a>
       </div>
+    </div>
+  </div>
 
+  <!-- ✅ قطع مختارة (NEW) -->
+  <div class="section">
+    <div class="section-header">
+      <div class="title-wrap">
+        <div class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 7h10v14H7V7Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M9 3h6v4H9V3Z" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h2>قطع مختارة</h2>
+      </div>
+      <div class="hint">اسحبي يمين/يسار</div>
+    </div>
+
+    <div class="row">
+      <!-- Index shows ONLY picture + name, no price -->
+      <div class="card no-price">
+        <a href="./Category12.html">
+          <div class="img-wrap"><img src="Gbot1.jpeg" alt="قطع مختارة"></div>
+          <div class="name">قطع مختارة</div>
+          <button class="view-btn" type="button">عرض</button>
+        </a>
+      </div>
     </div>
   </div>
 
