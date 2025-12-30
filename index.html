@@ -259,11 +259,11 @@
       margin-top:10px;
     }
 
-    /* ✅ Floating social bubbles — TOP LEFT */
+    /* Floating social bubbles — TOP LEFT */
     .social-bubbles{
       position:fixed;
-      left:16px;          /* ✅ left side */
-      top:92px;           /* ✅ below fixed topbar */
+      left:16px;
+      top:92px;
       z-index:1200;
       display:flex;
       flex-direction:column;
@@ -290,7 +290,6 @@
     .bubble.snap{background:#FFFC00}
     .bubble.snap svg{fill:#111}
 
-    /* Label appears to the RIGHT (since bubbles are on left) */
     .bubble-label{
       position:absolute;
       left:64px;
@@ -312,7 +311,6 @@
       transform:translateX(0);
     }
 
-    /* On very small screens: hide labels so they never cover text */
     @media (max-width: 520px){
       .bubble-label{display:none;}
       .social-bubbles{top:88px; left:12px;}
@@ -353,7 +351,7 @@
     </div>
   </header>
 
-  <!-- ✅ Floating Social Bubbles (Top Left) -->
+  <!-- Floating Social Bubbles (Top Left) -->
   <div class="social-bubbles" aria-label="Social links">
     <div class="bubble-wrap">
       <a class="bubble wa" href="https://wa.me/971555504407" target="_blank" rel="noopener" aria-label="WhatsApp">
@@ -387,7 +385,6 @@
     </div>
   </div>
 
-  <!-- ✅ THE REST OF YOUR SECTIONS STAY THE SAME -->
   <!-- العطور -->
   <div class="section" id="perfumes">
     <div class="section-header">
@@ -441,7 +438,7 @@
         <a href="./Category3.html">
           <div class="img-wrap"><img src="oudsla.jpeg" alt="عود سلا"></div>
           <div class="name">عود سلا</div>
-          <div class="price">120 درهم</div>
+          <div class="price">حسب الوزن</div>
           <button class="view-btn" type="button">عرض</button>
         </a>
       </div>
@@ -450,7 +447,7 @@
         <a href="./Category4.html">
           <div class="img-wrap"><img src="ouddqa.jpeg" alt="عود دقة"></div>
           <div class="name">عود دقة</div>
-          <div class="price">75 درهم</div>
+          <div class="price">حسب الوزن</div>
           <button class="view-btn" type="button">عرض</button>
         </a>
       </div>
